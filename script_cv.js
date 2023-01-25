@@ -153,13 +153,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
 			const subject = `proposed position ${formData.get('position')}`;
 			const body = `
-			Company Name: ${formData.get('companyname')}
-			Name: ${formData.get('name')}
-			Phone: ${formData.get('phone')}
-			Email: ${formData.get('email')}
-			Message: ${formData.get('formMessage')}`;
+			<h2>Company Name: ${formData.get('companyname')}</h2>
+			<p><bold>>Name:</bold> ${formData.get('name')}</p>
+			<p><bold>>Phone:</bold>  ${formData.get('phone')}</p>
+			<p><bold>>Email:</bold> ${formData.get('email')}</p>
+			<p><bold>>Message:</bold> ${formData.get('formMessage')}</p>`
 
-			window.location.href = `mailto:myinfocv2023@gmail.com?subject=${subject}&body=${body}`;
+			window.location.href = `mailto:?Content-type=text/html?myinfocv2023@gmail.com?subject=${subject}&body=${body}`;
 		}
 	}
 
