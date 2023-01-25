@@ -159,7 +159,9 @@ document.addEventListener('DOMContentLoaded', function () {
 			<p><bold>>Email:</bold> ${formData.get('email')}</p>
 			<p><bold>>Message:</bold> ${formData.get('formMessage')}</p>`
 
-			window.location.href = `mailto:?Content-type=text/html?myinfocv2023@gmail.com?subject=${subject}&body=${body}`;
+			window.location.href = `mailto:myinfocv2023@gmail.com?Content-type=text/html??subject=${subject}&body=${body}`;
+			form.reset();
+			close();
 		}
 	}
 
