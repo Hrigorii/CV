@@ -5,11 +5,11 @@
 ////////////////////////////// Get elements from Page ////////////////////////////////////
 
 const button = document.querySelector('.button__contact');
-const modal = document.querySelector('.myModal');
-const modalContent = document.querySelector('.myModalContent');
+const modal = document.querySelector('.modal');
+const modalContent = document.querySelector('.modal__content');
 const stars = document.querySelectorAll('img');
-const container = document.querySelector('.skills_items');
-const classImage = [...document.querySelectorAll('.item')];
+const container = document.querySelector('.skills__items');
+const classImage = [...str.querySelectorAll('.item')];
 
 
 ////////////////////////////// draw Stars ////////////////////////////////////////////////
@@ -41,22 +41,6 @@ function drawStar(full, empty, target) {
 }
 
 const mySkills = {
-	html: {
-		f: 4,
-		e: 1,
-	},
-	css: {
-		f: 4,
-		e: 1,
-	},
-	jsreact: {
-		f: 4,
-		e: 1,
-	},
-	sass: {
-		f: 3,
-		e: 2,
-	},
 	responsibility: {
 		f: 5,
 		e: 0,
@@ -105,7 +89,7 @@ function close() {
 }
 
 function closeModal(event) {
-	if (event.target.className == 'modalBody') {
+	if (event.target.className == 'modal__body') {
 		close();
 	}
 	if (event.target.className == 'close') {

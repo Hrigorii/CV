@@ -60,30 +60,30 @@ h3 {
 	box-shadow: 0px 4px 3px #8f8d8d;
 }
 
-.text {
+.header__text {
 	margin-top: 59px;
 	margin-bottom: 20px;
 }
 
-.text h1 {
+.header__text h1 {
 	font-size: 38px;
 	font-weight: 300;
 	margin-bottom: 20px;
 	letter-spacing: 0.5px;
 }
 
-.text h2 {
+.header__text h2 {
 	font-size: 20px;
 	font-weight: 300;
 	letter-spacing: 0.5px;
 }
 
-.logo {
+.header__logo {
 	z-index: 4;
 
 }
 
-.image_logo img {
+.header__image-logo img {
 	border-radius: 50%;
 	box-shadow: 0px 3px 3px #b9b5b5;
 	;
@@ -235,7 +235,7 @@ h3 {
 	box-sizing: border-box;
 }
 
-.work__list_date {
+.work__list-date {
 	display: flex;
 	padding: 20px 30px 20px 20px;
 	background-image: url('./img/datebkg.png');
@@ -245,17 +245,17 @@ h3 {
 
 }
 
-.work__list_date p {
+.work__list-date p {
 	margin-top: 10%;
 }
 
 @media (max-width: 700px) {
-	.work__list_date p {
+	.work__list-date p {
 		margin-top: 60%;
 	}
 }
 
-.work__list__text {
+.work__list-text {
 	display: flex;
 	align-items: center;
 	padding: 30px 20px;
@@ -265,7 +265,7 @@ h3 {
 	background-origin: border-box;
 }
 
-.text__items {}
+
 
 .skills {
 	background-color: #fff;
@@ -279,7 +279,7 @@ h3 {
 	margin-bottom: 20px;
 }
 
-.skills_items {
+.skills__items {
 	display: grid;
 	grid-template-columns: 40% 60%;
 	column-gap: 20px;
@@ -287,7 +287,7 @@ h3 {
 	box-sizing: border-box; */
 }
 
-.skills_item {
+.skills__item {
 	width: 100%;
 	background-color: #eaeaea;
 	padding: 22px;
@@ -295,7 +295,7 @@ h3 {
 	box-shadow: 4px 3px 3px #b9b5b5;
 }
 
-.skills_item h3 {
+.skills__item h3 {
 	margin: 10px 0px 30px 0px;
 }
 
@@ -307,11 +307,14 @@ h3 {
 
 }
 
+.items.professional{
+	grid-template-columns: repeat(auto-fit, minmax(110px, auto));
+}
+
 @media (max-width: 1290px) {
-	.skills_items {
+	.skills__items {
 		grid-template-columns: 50% 50%;
 	}
-
 }
 
 @media (max-width: 1062px) {
@@ -324,7 +327,6 @@ h3 {
 	font-size: 20px;
 	font-weight: 300;
 	letter-spacing: 1px;
-
 }
 
 .item p {
@@ -337,14 +339,13 @@ h3 {
 	margin: 10px 0px 28px 0px;
 }
 
-
 .image img:hover {
 	cursor: pointer;
 }
 
 /* //////////////////////////////////////// Modal and Form //////////////////////////////////////////////////// */
 
-.myModal {
+.modal {
 	position: fixed;
 	width: 100%;
 	height: 100%;
@@ -358,31 +359,31 @@ h3 {
 	z-index: 9999;
 }
 
-.modalBody {
+.modal__body {
 	min-height: 100%;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 }
 
-.myModalContent {
+.modal__content {
 	position: relative;
 	transition: all 0.8s ease 0s;
 	opacity: 0;
 	transform: translate(0px -100%);
 }
 
-.myModal.active {
+.modal.active {
 	opacity: 1;
 	visibility: visible;
 }
 
-.myModal.active .myModalContent {
+.modal.active .modal__content {
 	opacity: 1;
 	transform: translate(0px 0px);
 }
 
-.contact__form {
+.contact-form {
 	position: relative;
 	max-width: 550px;
 	margin: 0px auto;
@@ -393,7 +394,7 @@ h3 {
 
 }
 
-.contact__form::after {
+.contact-form::after {
 	content: '';
 	position: absolute;
 	top: 0;
@@ -405,34 +406,34 @@ h3 {
 	visibility: hidden;
 }
 
-.contact__form._sending::after {
+.contact-form._sending::after {
 	opacity: 1;
 	visibility: visible;
 }
 
-.contact__form * {
+.contact-form * {
 	outline: none;
 }
 
-.form__title {
+.contact-form__title {
 	font-size: 40px;
 	font-weight: 700;
 	margin: 0px 0px 30px 0px;
 }
 
 
-.form__item {
+.contact-form__item {
 	margin: 0px 0px 10px 0px;
 
 }
 
-.form__lable {
+.contact-form__lable {
 	font-size: 18px;
 	display: block;
 	margin: 0px 0px 10px 0px;
 }
 
-.form_input {
+.contact-form__input {
 	height: 50px;
 	padding: 0px 20px;
 	width: 100%;
@@ -441,22 +442,22 @@ h3 {
 	transition: all 0.5s ease 0s;
 }
 
-.form_input:focus {
+.contact-form__input:focus {
 	box-shadow: 0 5px 10px #d3d925;
 	border-radius: 5px;
 }
 
-.form_input.error {
+.contact-form__input.error {
 	box-shadow: 0 2px 5px red;
 	border-radius: 5px;
 }
 
-textarea .form_input {
+textarea .contact-form_input {
 	min-height: 250px;
 	resize: vertical;
 }
 
-.select {
+.contact-form__select {
 	width: 100%;
 	height: 50px;
 	border-radius: 5px;
@@ -464,23 +465,21 @@ textarea .form_input {
 	padding: 0px 20px;
 }
 
-.checkbox {}
-
-.checkbox.error .checkbox__label::before {
+.contact-form__checkbox.error .contact-form__checkbox-label::before {
 	box-shadow: 0 0px 5px red inset;
 }
 
-.checkbox__input {
+.contact-form__checkbox-input {
 	display: none;
 }
 
 /* Custom checkbox icon  */
 
-.checkbox__input:checked+.checkbox__label::after {
+.contact-form__checkbox-input:checked+.contact-form__checkbox-label::after {
 	transform: scale(1);
 }
 
-.checkbox__label {
+.contact-form__checkbox-label {
 	font-size: 16px;
 	line-height: 140%;
 	display: inline-flex;
@@ -489,7 +488,7 @@ textarea .form_input {
 	cursor: pointer;
 }
 
-.checkbox__label::before {
+.contact-form__checkbox-label::before {
 	content: '';
 	align-self: flex-start;
 	flex: 0 0 24px;
@@ -500,7 +499,7 @@ textarea .form_input {
 	margin: 0px 10px 0px 0px;
 }
 
-.checkbox__label::after {
+.contact-form__checkbox-label::after {
 	content: '';
 	width: 16px;
 	height: 16px;
