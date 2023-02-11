@@ -92,13 +92,14 @@ function closeModal(event) {
 	if (event.target.className == 'modal__body') {
 		close();
 	}
-	if (event.target.className == 'close') {
+	if (event.target.className == 'ok-button') {
 		close();
 	}
 }
 
 button.addEventListener('click', showModal);
 modal.addEventListener('click', closeModal);
+document.querySelector('.ok-button').addEventListener('click', closeModal);
 
 
 ////////////////////////////// Klick on star ////////////////////////////////////
@@ -122,94 +123,4 @@ function toggle(event) {
 container.addEventListener('click', toggle);
 
 
-////////////////////////////// Call back Form ////////////////////////////////////
 
-document.addEventListener('DOMContentLoaded', function () {
-	const form = document.getElementById('contactForm');
-	form.addEventListener('submit', formSend);
-
-
-	async function formSend(event) {
-		event.preventDefault();
-		let error = formValidate(form);
-		let formData = new FormData(form);
-		if (error === 0) {
-
-			const subject = `proposed position ${formData.get('position')}`;
-			const body = `
-			<h2>Company Name: ${formData.get('companyname')}</h2>
-			<p><bold>>Name:</bold> ${formData.get('name')}</p>
-			<p><bold>>Phone:</bold>  ${formData.get('phone')}</p>
-			<p><bold>>Email:</bold> ${formData.get('email')}</p>
-			<p><bold>>Message:</bold> ${formData.get('formMessage')}</p>`
-
-			window.location.href = `mailto:myinfocv2023@gmail.com?Content-type=text/html??subject=${subject}&body=${body}`;
-			form.reset();
-			close();
-		}
-	}
-
-	// async function formSend(event) {
-	// 	event.preventDefault();
-	// 	let error = formValidate(form);
-	// 	let formData = new FormData(form);
-	// 	if (error === 0) {
-	// 		form.classList.add('_sending');
-	// 		let response = await fetch('./sendmail.php', {
-	// 			method: 'POST',
-	// 			body: formData,
-	// 		});
-
-	// 		if (response.ok) {
-	// 			alert(result.message);
-	// 			let result = await response.json();
-	// 			form.reset();
-	// 			form.classList.remove('_sending');
-	// 		} else {
-	// 			alert('Error');
-	// 			form.classList.remove('_sending');
-	// 		}
-	// 	}
-	// }
-
-	function formValidate(form) {
-		let error = 0;
-		let formreq = document.querySelectorAll('._req');
-
-		for (let index = 0; index < formreq.length; index++) {
-			const input = formreq[index];
-
-			formRemoveError(input);
-			if (input.className.includes('_email')) {
-				if (emailTest(input)) {
-					formAddError(input);
-					error++;
-				}
-			} else if (input.getAttribute('type') === 'checkbox' && input.checked === false) {
-				formAddError(input);
-				error++;
-			} else {
-				if (input.value === '') {
-					formAddError(input);
-					error++;
-				}
-			}
-		}
-		return error;
-	}
-
-	function formAddError(input) {
-		input.parentElement.classList.add('error');
-		input.classList.add('error');
-	}
-
-	function formRemoveError(input) {
-		input.parentElement.classList.remove('error');
-		input.classList.remove('error');
-	}
-
-	function emailTest(input) {
-		return !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(input.value);
-	}
-
-})
