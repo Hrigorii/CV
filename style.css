@@ -366,12 +366,12 @@ h3 {
 	transform: translate(0px -100%);
 }
 
-.modal.active {
+.active {
 	opacity: 1;
 	visibility: visible;	
 }
 
-.modal.active .modal__content {
+.active .modal__content {
 	opacity: 1;
 	transform: translate(0px 0px);	
 }
@@ -384,6 +384,13 @@ h3 {
 	display: flex;
 	flex-direction: column;
 	row-gap: 30px;
+	opacity: 0;
+	visibility: hidden;
+}
+
+.contact-info.active{
+	opacity: 1;
+	visibility: visible;	
 }
 
 @media (max-width: 1062px) {

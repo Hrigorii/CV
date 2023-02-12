@@ -80,19 +80,21 @@ classImage.forEach(image => {
 function showModal() {
 	modal.classList.add('active');
 	document.body.classList.add('stop_scroll');
+	document.querySelector('.contact-info').classList.add('active');
 
 }
 
 function close() {
 	modal.classList.remove('active');
 	document.body.classList.remove('stop_scroll');
+	document.querySelector('.contact-info').classList.remove('active');
 }
 
 function closeModal(event) {
-	if (event.target.className == 'modal__body') {
+	if (event.target.className === 'modal__body') {
 		close();
 	}
-	if (event.target.className == 'ok-button') {
+	if (event.target.className === 'ok-button') {
 		close();
 	}
 }
