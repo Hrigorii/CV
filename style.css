@@ -403,6 +403,9 @@ h3 {
 
 
 .contact-info a{
+	display: flex;
+	align-items: center;
+	column-gap: 10px;
 	text-decoration: none;
 	color: black;
 }
@@ -412,6 +415,7 @@ h3 {
 	align-items: center;
 	column-gap: 5px;
 }
+
 
 /* ///////////////////// */
 
