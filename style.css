@@ -231,18 +231,20 @@ h3 {
 
 .work__list {
 	display: grid;
-	grid-template-columns: minmax(auto, 197px) 1fr;		
+	grid-template-columns: 180px 1fr;		
 }
 
 .work__list-date {
+	padding: 10px 0px;
 	position: relative;
 	top: -5px;
 	left: 20px;
 	border-radius: 5px;
 	display: flex;
+	flex-direction: column;
+	justify-content: center;
 	height: 85%;
-	align-items: center;
-	padding: 20px 30px 20px 20px;
+	align-items: center;	
 	background-color: #eaeaea;	
 	}
 
@@ -291,11 +293,14 @@ h3 {
 	grid-template-columns: repeat(auto-fit, minmax(180px, auto));
 	column-gap: 10px;
 	row-gap: 10px;
-
 }
 
 .items.professional{
 	grid-template-columns: repeat(auto-fit, minmax(110px, auto));
+}
+
+.items.professional .item{
+	text-align: center;
 }
 
 @media (max-width: 1290px) {
