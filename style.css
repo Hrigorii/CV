@@ -233,17 +233,22 @@ h3 {
 	grid-gap: 20px;	
 }
 
-@media (max-width: 960px) {
-.work__lists{
-	display: flex;
-	flex-direction: column;
-	row-gap: 20px;
-}
-}
+
 
 .work__list {
 	display: grid;
 	grid-template-columns: 180px 1fr;		
+}
+
+@media (max-width: 960px) {
+	.work__lists{
+		display: flex;
+		flex-direction: column;
+		row-gap: 20px;		
+	}
+	.work__list{
+		grid-template-columns: 145px 1fr;	
+	}
 }
 
 .work__list-date {
@@ -302,7 +307,7 @@ h3 {
 }
 
 .skills__item.personal{
-	padding: 22px 0px 22px 22px;
+	padding: 22px;
 }
 .items {
 	display: grid;
@@ -321,7 +326,7 @@ h3 {
 
 @media (max-width: 1290px) {
 	.skills__items {
-		grid-template-columns: 50% 50%;
+		grid-template-columns: 44% 50%;
 	}
 }
 
@@ -346,6 +351,15 @@ h3 {
 .image img:hover {
 	cursor: pointer;
 }
+
+@media (max-width: 750px){
+.work, .skills{
+	padding: 35px 20px 35px 20px;
+}
+
+
+}
+
 
 /* //////////////////////////////////////// Modal and Form //////////////////////////////////////////////////// */
 
